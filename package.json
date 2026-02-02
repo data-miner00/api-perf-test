@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Exploring Grafana k6.",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -11,5 +12,8 @@
   ],
   "author": "Shaun Chong <mumk0313@gmail.com>",
   "license": "UNLICENSED",
-  "type": "commonjs"
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

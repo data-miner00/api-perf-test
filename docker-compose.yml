@@ -1,7 +1,15 @@
 services:
   k6:
     image: grafana/k6:latest
-    container_name: load-testing
+    container_name: k6
     command: run /test.js
     volumes:
       - ./load-test.js:/test.js
+    depends_on:
+      - app
+
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "3000:3000"

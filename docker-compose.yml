@@ -2,9 +2,9 @@ services:
   k6:
     image: grafana/k6:latest
     container_name: k6
-    command: run /test.js
+    command: run /tests/simple-test.js
     volumes:
-      - ./load-test.js:/test.js
+      - ./tests:/tests
     depends_on:
       - app
 

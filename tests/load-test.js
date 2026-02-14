@@ -10,6 +10,9 @@ export const options = {
     { duration: "3m", target: 10 }, // Stay at 10 users for 3 minutes
     { duration: "1m", target: 0 }, // Ramp down to 0 users over 1 minute
   ],
+  thresholds: {
+    http_req_duration: ["p(95)<500"], // 95% of requests should be below 500ms
+  },
 };
 
 const dates = new SharedArray("dates", function () {

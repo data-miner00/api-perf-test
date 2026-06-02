@@ -1,7 +1,10 @@
 import http from "k6/http";
 import { sleep, check } from "k6";
 
-const BASE_URL = false ? "http://host.docker.internal:3000" : "http://app:3000";
+const isInsideDocker = __ENV.INSIDE_DOCKER === "true";
+const BASE_URL = !isInsideDocker
+  ? "http://host.docker.internal:3000"
+  : "http://app:3000";
 
 export const options = {
   duration: "5m",
